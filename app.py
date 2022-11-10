@@ -19,7 +19,7 @@ def check_in_db(address):
 db = SQLAlchemy()
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = r"postgres://vivogeztwsyoyv:43bf3f9b83512610fd51a21b50b46d7ce7f779b829088008076514af6aba3886@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d5hulet87b6tl6"
+app.config['SQLALCHEMY_DATABASE_URI'] = r"postgresql://vivogeztwsyoyv:43bf3f9b83512610fd51a21b50b46d7ce7f779b829088008076514af6aba3886@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d5hulet87b6tl6"
 with app.app_context():
     db.init_app(app)
 
