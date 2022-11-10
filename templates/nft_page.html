@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+nft_page
+{% endblock %}
+
+{% block body%}
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container">
+<div class="row align-items-center g-lg-5 py-5">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+
+  <span filter-content="">Here you can find NFT. </span>
+<div class="rounded float-end col-lg-15 col-md-12 mb-4 mb-md-5">
+<img src="{{url_for('static', filename='Robotos-NFT-Collection.jpeg')}}" class="img-fluid width="500" height="730">
+</div>
+<form method="post">
+    <input type="text" name="title" id="title" class="form-control" placeholder="Enter url">
+    <input type="submit" class="btn btn-outline-primary me-2" value="Find">
+</form>
+  
+</body>
+</html>
+
+
+
+{% endblock %}

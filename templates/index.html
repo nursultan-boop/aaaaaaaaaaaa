@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Main Page
+{% endblock %}
+
+{% block body%}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container">
+  <div class=" row align-items-center g-lg-5 py-5">
+      <svg xmlns="http://www.w3.org/2000/svg">
+  
+        <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+        
+          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            
+            <!-- We only want horizontal blurring. x: 100, y: 0 -->
+            
+              <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+          </filter>
+      </svg>
+      
+      <span filter-content="">Welcome to the place where you can find your NFT</span>
+      <div class="rounded float-end col-lg-6 col-md-14 mb-4 mb-md-5">
+        <img src="{{url_for('static', filename='nft.png')}}" class="img-fluid width="200" height="130">
+      </div>
+      <div class="  col-md-10 mx-auto col-lg-5">
+        <form class="shadow p-4 p-md-5 border rounded-3 shadow -p border shadow border-primary ">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">UserName</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <a  href="/nft_page" class="w-100 btn btn-lg btn-outline-primary me-2" type="submit">Sign up</a>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

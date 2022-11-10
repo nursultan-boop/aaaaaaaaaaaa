@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block body%}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <span filter-content="A">About NFT</span>
+  <div class="rounded float-end col-lg-6 col-md-14 mb-4 mb-md-5">
+    <img src="{{url_for('static', filename='NFT-Character-PNG-Pic.png')}}" class="img-fluid width="200" height="130">
+  </div>
+      <p class="lead fw-normal">The site will help you find information about NFT. 
+         NFT is a unique digital identifier that cannot be copied, substituted, or subdivided, that is recorded in a blockchain, and that is used to certify authenticity and ownership.</p>
+      <a class="btn btn-outline-secondary" href="/reg">Find NFT</a>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+{% endblock %}

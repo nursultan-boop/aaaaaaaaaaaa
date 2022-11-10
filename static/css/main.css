@@ -1,0 +1,364 @@
+header {
+    background-color: #beef00 ;
+    height: 70px;
+    width: 150%;
+    opacity: .9;
+    margin-bottom: 10px;
+  }
+span {
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    color:#beef00 ;
+    text-shadow: 5px 5px 5px black;
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+span:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: attr(filter-content);
+  
+    filter: url(#motion-blur-filter);
+  }
+
+svg {
+    display: none;
+  }
+
+  
+  .background-one {
+    background-color: #beef00 ;
+  }
+  
+  .background-two {
+    background-color: #beef00 
+  }
+  
+  
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+  }
+  
+  a {
+    font-family: "Avenir Next", sans-serif;
+    font-size: 2.5em;
+    
+  }
+  
+  .link-one {
+    color:black;
+    transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
+    line-height: 2em;
+    font-size: 20px;
+  }
+  
+  .link-one:hover {
+    color: #111;
+    transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+
+  }
+  
+  .link-one::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #1400c6;
+    
+  
+    clip-path: circle(0% at 50% calc(50%));
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  
+  .link-one:hover::before {
+    clip-path: circle(100% at 50% 50%);
+  }
+  
+  .link-one::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #151515;
+  
+    clip-path: polygon(
+      40% 0%,
+      60% 0%,
+      60% 0%,
+      40% 0%,
+      40% 100%,
+      60% 100%,
+      60% 100%,
+      40% 100%
+    );
+  
+    
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  
+  .link-one:hover::after {
+    clip-path: polygon(
+      40% 10%,
+      60% 10%,
+      60% 35%,
+      40% 35%,
+      40% 90%,
+      60% 90%,
+      60% 65%,
+      40% 65%
+    );
+  }
+  
+  .link-two {
+    color: black;
+    transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
+    font-size: 20px;
+  }
+  
+  .link-two:hover {
+    color: #111;
+    transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  
+  .link-two::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    clip-path: polygon(
+      0% -20%,
+      100% -30%,
+      100% -10%,
+      0% 0%,
+      0% 130%,
+      100% 120%,
+      100% 100%,
+      0% 110%
+    );
+    background-color: #ff0028;
+  
+    transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  .link-two:hover::before {
+    clip-path: polygon(
+      0% 10%,
+      100% 0%,
+      100% 20%,
+      0% 30%,
+      0% 100%,
+      100% 90%,
+      100% 70%,
+      0% 80%
+    );
+  }
+  
+  .link-two::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 5ch;
+    height: 5ch;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%) rotate(0deg) scale(0);
+    transition: transform 1s ease;
+  
+    background-color: #ff0028;
+  }
+  
+  .link-two:hover::after {
+    transform: translate(50%, -50%) rotate(135deg) scale(1);
+  }
+
+
+  button, button::after {
+    width: 100px;
+    height: 60px;
+    font-family: "Avenir Next", sans-serif;
+    line-height: 0em;
+    background: linear-gradient(45deg, transparent 5%, #beef00  5%);
+    border: 0;
+    color: black;
+    letter-spacing: 0px;
+    line-height: 8px;
+    box-shadow: 6px 0px 0px #1400c6;
+    outline: transparent;
+    position: relative;
+  }
+  
+  button::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    
+    content: 'Register';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+  }
+  
+  button:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 10px);
+    }
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 10px);
+    }
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 5px);
+    }
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-5px, 0px);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(5px, 0px);
+    }
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(5px, 10px);
+    }
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -10px);
+    }
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+    }
+  }
+  html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #beef00 50%, #1400c6 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  .span1 {
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    color:#beef00 ;
+    text-shadow: 5px 5px 5px #1400c6;
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+
+  
+  html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #beef00 50%, #1400c6 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  .span1 {
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    color:#beef00 ;
+    text-shadow: 5px 5px 5px #1400c6;
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+
+  
